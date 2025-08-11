@@ -2,9 +2,9 @@ package learningmaps
 
 import "fmt"
 
+//MAPS
 func LearningMaps() {
 	/*
-	* maps
 	* maps can be declared with var map[type]type
 	* the type inside the square brackets is the key and the type outside the square brackets is the value
 	 */
@@ -37,5 +37,24 @@ func LearningMaps() {
 		"Kittens": []string{"Waldo", "Raul", "Ze"},
 	*/
 	// in the book the above commented way is how the map was declared, but it says redundant in the latest compiler
+
 	fmt.Println(nonEmptyMap) // output: map[Kittens:[Waldo Raul Ze] Lions:[Sarah Peter Billie] Orcas:[Fred Ralph Bijou]]
+
+	fmt.Println(nonEmptyMap["Orcas"])                            // reading from map
+	nonEmptyMap["Lions"] = []string{"Messi", "Neymar", "Suarez"} // writing in a map
+
+	// The comma ok Idiom
+	v, ok := nonEmptyMap["Orcas"]
+	fmt.Println(v, ok)
+	/*
+	* v = values of the key Orcas, if the value exists ok will be true, else it will be false.
+	* output: [Fred, Ralph, Bijou] true
+	 */
+
+	// deleting from map
+	delete(nonEmptyMap, "Orcas") // removes a specified key from the map
+	fmt.Println(nonEmptyMap)     // output: map[Kittens:[Waldo Raul Ze] Lions:[Messi Neymar Suarez]], everything under key "Orcas" deleted
+	clear(nonEmptyMap)           //clears every key and value from the map
+	fmt.Println(nonEmptyMap)     // output: map[]
+
 }
