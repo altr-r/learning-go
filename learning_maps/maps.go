@@ -56,5 +56,4 @@ func LearningMaps() {
 	fmt.Println(nonEmptyMap)     // output: map[Kittens:[Waldo Raul Ze] Lions:[Messi Neymar Suarez]], everything under key "Orcas" deleted
 	clear(nonEmptyMap)           //clears every key and value from the map
 	fmt.Println(nonEmptyMap)     // output: map[]
-
 }
